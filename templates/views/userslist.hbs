@@ -1,0 +1,64 @@
+
+{{>header}} 
+  <div class="main-content">
+        <section class="section">
+          <ul class="breadcrumb breadcrumb-style ">
+            <li class="breadcrumb-item">
+              <h4 class="page-title m-b-0">User Data</h4>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="index.html">
+                <i data-feather="home"></i></a>
+            </li>
+            <li class="breadcrumb-item">Home</li>
+            <li class="breadcrumb-item">User Data</li>
+          </ul>
+          <div class="section-body">
+            <div class="row">
+              <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>User List</h4>
+                  </div>
+                  <div class="card-body">
+                    {{#if message}}
+                    <div class="alert alert-success">{{message}}</div> 
+                    {{/if}}
+                  <table id="table_id" class="display">
+                    <thead>
+                        <tr>
+                            <th>#</th> 
+                            <th>Email</th> 
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                   {{#each  users}}
+                      <tr>
+                            <td>{{this._id}}</td>
+                            <td>{{this.email}}</td> 
+                            <td><a href="/editUser/{{this._id}}"><i class="text text-success fa fa-edit"></i></a>
+                            <a href="/deleteUser/{{this._id}}"><i class="text text-danger fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                   {{/each}}
+                    </tbody>
+                </table>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      
+{{>footer}}
+ <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
+      <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
+            <script>
+
+$(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+</script>

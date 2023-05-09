@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Billing - Admin Dashboard</title>
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="../../assets/css/app.min.css">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <link rel="stylesheet" href="../../assets/bundles/jqvmap/dist/jqvmap.min.css">
+  <!-- Custom style CSS -->
+  <link rel="stylesheet" href="../../assets/css/custom.css">
+  <link rel='shortcut icon' type='image/x-icon' href='../../assets/img/favicon.ico' />
+ 
+  <link rel="stylesheet" href="../../assets/bundles/bootstrap-daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="../../assets/bundles/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+  <link rel="stylesheet" href="../../assets/bundles/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="../../assets/bundles/jquery-selectric/selectric.css">
+  <link rel="stylesheet" href="../../assets/bundles/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
+  <link rel="stylesheet" href="../../assets/bundles/bootstrap-tagsinput/dist/bootstrap-tagsinput.css"> 
+
+
+</head>
+<body>
+  <div class="loader"></div>
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar sticky">
+        <div class="form-inline mr-auto">
+          <ul class="navbar-nav mr-3">
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg
+									collapse-btn"> <i data-feather="menu"></i></a></li>
+            <li>
+              <form class="form-inline mr-auto">
+                <div class="search-element">
+                  <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="200">
+                  <button class="btn" type="submit">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </form>
+            </li>
+          </ul>
+        </div>
+        <ul class="navbar-nav navbar-right">
+          <li><a href="#" class="nav-link nav-link-lg fullscreen-btn">
+              <i data-feather="maximize"></i>
+            </a></li> 
+          <li class="dropdown"><a href="#" data-toggle="dropdown"
+              class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="../../assets/img/user.png"
+                class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
+            <div class="dropdown-menu dropdown-menu-right pullDown">
+              <div class="dropdown-title">Hello <?=$userdata->name;?></div>
+              <a href="profile" class="dropdown-item has-icon"> <i class="far
+										fa-user"></i> Profile
+              </a> <a href="settings" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
+                Settings
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="/logout" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i>
+                Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+     
+      <div class="main-sidebar sidebar-style-2">
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="index.html"> <img alt="image" src="../../assets/img/logo.png" class="header-logo" /> <span
+                class="logo-name">Billing</span>
+            </a>
+          </div> 
+          <ul class="sidebar-menu">
+            <li class="menu-header">Main</li>
+            <li class="dropdown ">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="monitor"></i><span>User Data</span></a>
+              <ul class="dropdown-menu"> 
+                <li><a class="nav-link" href="addUser">Add Users</a></li>
+                <li><a class="nav-link" href="users">Users</a></li>
+                <li><a class="nav-link" href="rolemgmt">Role Management</a></li> 
+              </ul>
+            </li> 
+            <li class="dropdown ">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="monitor"></i><span>Entry</span></a>
+              <ul class="dropdown-menu"> 
+                <li><a class="nav-link" href="add_entry">Add Entry</a></li>
+                <li><a class="nav-link" href="entry">Entry</a></li> 
+              </ul>
+            </li>
+            <li class="dropdown ">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="monitor"></i><span>Category</span></a>
+              <ul class="dropdown-menu"> 
+                <li><a class="nav-link" href="add_category">Add Category</a></li>
+                <li><a class="nav-link" href="categories">Categories</a></li> 
+              </ul>
+            </li>
+            
+            <li class="dropdown ">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="monitor"></i><span>Sub Category</span></a>
+              <ul class="dropdown-menu"> 
+                <li><a class="nav-link" href="add_subcategory">Add Sub Category</a></li>
+                <li><a class="nav-link" href="subcategories">Sub Categories</a></li> 
+              </ul>
+            </li>
+            <li class="dropdown ">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="monitor"></i><span>Brand</span></a>
+              <ul class="dropdown-menu"> 
+                <li><a class="nav-link" href="add_brand">Add Brand</a></li>
+                <li><a class="nav-link" href="brands">Brands</a></li> 
+              </ul>
+            </li>
+            <li class="dropdown ">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="monitor"></i><span>Products</span></a>
+              <ul class="dropdown-menu"> 
+                <li><a class="nav-link" href="add_product">Add Product</a></li>
+                <li><a class="nav-link" href="products">Products</a></li> 
+              </ul>
+            </li>
+            <li class="dropdown ">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="monitor"></i><span>Billings</span></a>
+              <ul class="dropdown-menu"> 
+                <li><a class="nav-link" href="add_billing">Add Billing</a></li>
+                <li><a class="nav-link" href="billing_reports">Billing Reports</a></li> 
+                <li><a class="nav-link" href="billing_reports_download">Billing Reports Download</a></li> 
+              </ul>
+            </li>
+            <li class="dropdown ">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="monitor"></i><span>In-Stock</span></a>
+              <ul class="dropdown-menu"> 
+                <li><a class="nav-link" href="instock">In-Stock Check</a></li> 
+              </ul>
+            </li>
+            <li class="dropdown ">
+              <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                  data-feather="monitor"></i><span>Purchase Order</span></a>
+              <ul class="dropdown-menu"> 
+                <li><a class="nav-link" href="add_purchaseorder">Add Purchase Order</a></li>
+                <li><a class="nav-link" href="purchaseorder_reports">Purchase Order Reports</a></li> 
+                <li><a class="nav-link" href="purchaserorder_reports_download">PO Reports Download</a></li> 
+              </ul>
+            </li>
+          </ul>
+        </aside>
+      </div>
+      <!-- Main Content -->

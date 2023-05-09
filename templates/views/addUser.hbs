@@ -1,0 +1,66 @@
+
+{{>header}} 
+ <div class="main-content">
+        <section class="section">
+          <ul class="breadcrumb breadcrumb-style ">
+            <li class="breadcrumb-item">
+              <h4 class="page-title m-b-0">User Data</h4>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="/">
+                <i data-feather="home"></i></a>
+            </li>
+            <li class="breadcrumb-item">Home</li>
+            <li class="breadcrumb-item"><a href="/users">User Data</a></li>
+          </ul>
+          <div class="section-body">
+            <div class="row">
+              <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Basic Information</h4>
+                  </div>
+                  <div class="card-body">
+                    {{#if message}}
+                    <div class="alert alert-success">{{message}}</div> 
+                    {{/if}}
+                  <form method="post" action="/saveUser">
+                  {{#if _id}}
+                  <input type="hidden" name="_id" value="{{_id}}"/>
+                  {{/if}}
+				  <div class="row">   
+                  
+                <div class="form-group col-12 col-md-4 col-lg-4">
+                      <label>Email Id </label>
+                      <div class="input-group">
+                        <input name="email" type="email" id="email" class="form-control pwstrength"
+                        value="{{#if email}} {{email}}{{/if}}"
+                         data-indicator="pwindicator">
+                      </div> 
+                    </div>  
+                    <div class="form-group col-12 col-md-4 col-lg-4">
+                      <label>Password </label>
+                      <div class="input-group">
+                        <input name="password" id="password" type="password"
+                        value="{{#if password}} {{password}}{{/if}}"
+                         class="form-control pwstrength" data-indicator="pwindicator">
+                      </div> 
+                    </div>   
+                      
+					 <div class="form-group col-12 col-md-12 col-lg-12">
+					  <div class="buttons" align="center">
+                      
+                      <button name="submit" class="btn btn-outline-success width200">Submit</button>
+                    </div>
+                    </div>
+                    
+                  </div><!--row-->
+</form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+{{>footer}}
