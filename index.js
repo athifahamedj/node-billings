@@ -35,7 +35,7 @@ app.get("", (req, res) => {
   } else {
     res.render("login", {
       title: "Sample HBS page",
-      name: "Saravana",
+      name: "Athif",
     });
   }
 });
@@ -51,7 +51,7 @@ app.post("/logincheck", (req, res) => {
   else
     res.render("index", {
       title: "Sample HBS page",
-      name: "Saravana",
+      name: "Athif",
     });
 });
 
@@ -59,7 +59,7 @@ app.get("/home", (req, res) => {
   // res.send('My Express')
   res.render("index", {
     title: "Sample HBS page",
-    name: "Saravana",
+    name: "Athif",
   });
 });
 app.get("/users", (req, res) => {
