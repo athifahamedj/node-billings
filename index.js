@@ -110,6 +110,8 @@ app.get("/deleteUser/:id", (req, res) => {
 });
 
 app.post("/saveUser", (req, res) => {
+  // console.log(req.body);
+  // throw new Error("Stopped Here");
   const _id = req.body._id ? req.body._id : "";
   if (_id != "") {
     // res.send('Invalid Userid'+_id)
